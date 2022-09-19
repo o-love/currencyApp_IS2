@@ -1,26 +1,17 @@
 package currencyExchange.Model;
 
-public class Currency {
+import java.util.Objects;
 
-    private final String name;
-    private final String code;
-    private final String symbol;
+public record Currency(String name, String code, String symbol) {
 
-    public Currency(String name, String code, String symbol) {
-        this.name = name;
-        this.code = code;
-        this.symbol = symbol;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getSymbol() {
-        return symbol;
+    /**
+     * @param name
+     * @param code
+     * @param symbol
+     *
+     * @throws NullPointerException if currency code is {@code null}.
+     */
+    public Currency {
+        Objects.requireNonNull(code);
     }
 }
