@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Worked on Loader design.">
-      <change afterPath="$PROJECT_DIR$/currency.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/java/currencyExchange/Model/persistence/files/CurrencyLoaderFileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/resources/currency.csv" afterDir="false" />
+    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Finished CurrencyLoaderFromFile">
+      <change afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/currencyExchange/UI/CurrencyExchangeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency exchange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/currency exchange.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency.csv" beforeDir="false" afterPath="$PROJECT_DIR$/currency.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/modelDiagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/modelDiagram.uml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/ExchangeRateLoaderWeb.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,26 +37,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/olabr/Documents/ULPGC/fifth_semester/IS2/currency exchange/tests/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "database.data.views"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/olabr/Documents/ULPGC/fifth_semester/IS2/currency exchange/tests/resources&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\olabr\Documents\ULPGC\fifth_semester\IS2\currency exchange\tests\resources" />
@@ -70,32 +72,45 @@
       <recent name="currencyExchange.Model.persistence.files" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CurrencyLoaderFileTest">
-    <configuration name="CurrencyLoaderFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="currencyExchange.Main" />
       <module name="currency exchange" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="currencyExchange.Model.persistence.files.*" />
+          <option name="PATTERN" value="currencyExchange.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyLoaderFromFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="currencyExchange.Model.persistence.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="currencyExchange.Model.persistence.files" />
-      <option name="MAIN_CLASS_NAME" value="currencyExchange.Model.persistence.files.CurrencyLoaderFileTest" />
+      <option name="MAIN_CLASS_NAME" value="currencyExchange.Model.persistence.files.CurrencyLoaderFromFileTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyLoaderFileTest.loadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CurrencyLoaderFromFileTest.loadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currency exchange" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="currencyExchange.Model.persistence.files.*" />
+          <option name="PATTERN" value="currencyExchange.Model.persistence.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="currencyExchange.Model.persistence.files" />
-      <option name="MAIN_CLASS_NAME" value="currencyExchange.Model.persistence.files.CurrencyLoaderFileTest" />
+      <option name="MAIN_CLASS_NAME" value="currencyExchange.Model.persistence.files.CurrencyLoaderFromFileTest" />
       <option name="METHOD_NAME" value="loadTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -104,8 +119,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CurrencyLoaderFileTest" />
-        <item itemvalue="JUnit.CurrencyLoaderFileTest.loadTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CurrencyLoaderFromFileTest.loadTest" />
+        <item itemvalue="JUnit.CurrencyLoaderFromFileTest" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +135,8 @@
       <updated>1663588022483</updated>
       <workItem from="1663588024642" duration="6786000" />
       <workItem from="1663611953346" duration="563000" />
-      <workItem from="1663961507554" duration="2659000" />
+      <workItem from="1663961507554" duration="3318000" />
+      <workItem from="1664790202051" duration="6422000" />
     </task>
     <task id="LOCAL-00001" summary="Teachers work">
       <created>1663593276242</created>
@@ -149,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663603463119</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished CurrencyLoaderFromFile">
+      <created>1663967005810</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663967005810</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +194,8 @@
     <MESSAGE value="Teachers work" />
     <MESSAGE value="Converted ExchangeRate and Currency to records." />
     <MESSAGE value="Worked on Loader design." />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on Loader design." />
+    <MESSAGE value="Finished CurrencyLoaderFromFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished CurrencyLoaderFromFile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

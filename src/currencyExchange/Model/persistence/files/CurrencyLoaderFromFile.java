@@ -3,6 +3,7 @@ package currencyExchange.Model.persistence.files;
 import currencyExchange.Model.Currency;
 import currencyExchange.Model.persistence.Loader;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -25,8 +26,14 @@ public class CurrencyLoaderFromFile implements Loader<Currency> {
     public List<Currency> load() {
         try {
             return loadAllCurrenciesFromFile();
+        } catch (FileNotFoundException e) {
+            // TODO: Handle error
+            System.out.println();
+            return null;
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            // TODO: Handel error
+            System.out.println();
+            return null;
         }
     }
 

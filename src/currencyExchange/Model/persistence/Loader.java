@@ -1,8 +1,8 @@
 package currencyExchange.Model.persistence;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface Loader<T> {
 
-    List<T> load();
+    Collection<T> load();
 }
