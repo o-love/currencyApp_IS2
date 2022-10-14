@@ -7,7 +7,7 @@ public record ExchangeRate(Currency from, Currency to, float rate) {
     /**
      * @param from
      * @param to
-     * @param rate
+     * @param rate Value of a unit of {@code from} to {@code to}.
      *
      * @throws NullPointerException if {@code from} or {@code to} is {@code null}.
      * @throws IllegalArgumentException if rate is 0.
