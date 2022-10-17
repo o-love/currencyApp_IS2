@@ -1,4 +1,4 @@
-package currencyExchange.UI;
+package currencyExchange.view;
 
 import currencyExchange.Model.Currency;
 import currencyExchange.Model.ExchangeRate;

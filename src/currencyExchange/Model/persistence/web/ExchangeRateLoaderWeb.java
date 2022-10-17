@@ -33,13 +33,22 @@ public class ExchangeRateLoaderWeb implements Loader<ExchangeRate> {
         }
     }
 
+    public ExchangeRate loadOne(Currency source, Currency target) {
+        try {
+            return loadExchangeRate(source, target);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private Collection<ExchangeRate> loadAll() throws IOException {
         Set<ExchangeRate> exchangeRateSet = new HashSet<>();
 
-        for (Currency currency : currencies) {
-            for (Currency c : currencies) {
-                if (!currency.equals(c)) {
-                    ExchangeRate exchangeRate = loadExchangeRate(currency, c);
+        for (Currency sourceCurrency : currencies) {
+            for (Currency objectiveCurrency : currencies) {
+                if (!sourceCurrency.equals(objectiveCurrency)) {
+                    ExchangeRate exchangeRate = loadExchangeRate(sourceCurrency, objectiveCurrency);
                     exchangeRateSet.add(exchangeRate);
                 }
             }

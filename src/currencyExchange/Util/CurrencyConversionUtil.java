@@ -18,6 +18,6 @@ public class CurrencyConversionUtil {
         if (!from.getCurrency().equals(exchangeRate.from())) {
             throw new IllegalArgumentException("Converting a Money in a currency with different ExchangeRate currency");
         }
-        return new Money(exchangeRate.to(), exchangeRate.rate() * from.getAmount());
+        return new Money(exchangeRate.rate() * from.getAmount(), exchangeRate.to());
     }
 }

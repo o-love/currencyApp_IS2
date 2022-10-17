@@ -4,7 +4,7 @@ public class Money {
     private Currency currency;
     private float amount;
 
-    public Money(Currency currency, float amount) {
+    public Money(float amount, Currency currency) {
         this.currency = currency;
         this.amount = amount;
     }

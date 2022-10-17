@@ -16,7 +16,7 @@ class CurrencyConversionUtilTest {
 
         ExchangeRate exchangeRate = new ExchangeRate(currency1, currency2, 2);
 
-        Money money1 = new Money(currency1, 10.f);
+        Money money1 = new Money(10.f, currency1);
 
         Money result = CurrencyConversionUtil.convertMoneyWithExchangeRate(money1, exchangeRate);
 
@@ -30,7 +30,7 @@ class CurrencyConversionUtilTest {
 
         ExchangeRate exchangeRate = new ExchangeRate(currency1, currency2, 2);
 
-        Money money1 = new Money(currency1, 10.f);
+        Money money1 = new Money(10.f, currency1);
 
         Money result = CurrencyConversionUtil.convertMoneyWithExchangeRate(money1, exchangeRate);
 
