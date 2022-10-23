@@ -1,10 +1,13 @@
 package currencyExchange;
 
 import currencyExchange.Model.Currency;
-import currencyExchange.Model.ExchangeRate;
 import currencyExchange.Model.Money;
+import currencyExchange.Model.persistence.ExchangeRateLoader;
 import currencyExchange.Model.persistence.files.CurrencyLoaderFromFile;
 import currencyExchange.Model.persistence.web.ExchangeRateLoaderWeb;
+import currencyExchange.controller.MoneyCalculatorController;
+import currencyExchange.view.swing.CombinedViewSwing;
+import currencyExchange.view.swing.DialogSwing;
 import currencyExchange.view.swing.DisplaySwing;
 import currencyExchange.view.swing.GUISwing;
 
@@ -20,17 +23,26 @@ public class Main {
         // Load currencies
         Collection<Currency> currencies = new CurrencyLoaderFromFile("currency.csv").load();
 
-        // Load ExchangeRates
-        Collection<ExchangeRate> exchangeRates = new ExchangeRateLoaderWeb(URL_FOR_CURRENCY_EXCHANGE_RATES, currencies).load();
-
-        exchangeRates.forEach(System.out::println);
+        ExchangeRateLoader exchangeRateLoader = new ExchangeRateLoaderWeb(URL_FOR_CURRENCY_EXCHANGE_RATES, currencies);
 
         SwingUtilities.invokeLater(() -> {
+            // Model for GUI
             Money money = new Money(23.f, currencies.iterator().next());
 
+            // GUI
+            DisplaySwing display = new DisplaySwing(money);
 
+            DialogSwing dialog = new DialogSwing(currencies, display);
 
-            new GUISwing(new DisplaySwing(money), "Display");
+            // Controller
+            MoneyCalculatorController moneyCalculatorController = new MoneyCalculatorController(display, dialog, exchangeRateLoader);
+            dialog.setController(moneyCalculatorController);
+
+            new GUISwing(display, "Display");
+            new GUISwing(dialog, "Dialog");
+
+            // Combined view
+            new GUISwing(new CombinedViewSwing(dialog, display), "Combined");
         });
 
     }
