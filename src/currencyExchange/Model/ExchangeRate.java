@@ -5,12 +5,12 @@ import java.util.Objects;
 public record ExchangeRate(Currency from, Currency to, float rate) {
 
     /**
-     * @param from
-     * @param to
+     * @param from Source {@code Currency}
+     * @param to Result {@code Currency}.
      * @param rate Value of a unit of {@code from} to {@code to}.
      *
      * @throws NullPointerException if {@code from} or {@code to} is {@code null}.
-     * @throws IllegalArgumentException if rate is 0.
+     * @throws IllegalArgumentException if {@code rate} is 0.
      */
     public ExchangeRate {
         Objects.requireNonNull(from);

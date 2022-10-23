@@ -2,7 +2,7 @@ package currencyExchange.Model.persistence.web;
 
 import currencyExchange.Model.Currency;
 import currencyExchange.Model.ExchangeRate;
-import currencyExchange.Model.persistence.Loader;
+import currencyExchange.Model.persistence.ExchangeRateLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,14 +10,25 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
-public class ExchangeRateLoaderWeb implements Loader<ExchangeRate> {
+public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
 
-    private String currency_URL;
-    private Collection<Currency> currencies;
+    private final String currency_URL;
+    private final Collection<Currency> currencies;
 
+    /**
+     *
+     * @param url String which specifies the URL from which to load the exchange rates.
+     * @param currencies Collection with the currencies to load the {@code ExchangeRate} for.
+     *
+     * @throws NullPointerException if {@code url} or {@code currencies} is {@code null}.
+     */
     public ExchangeRateLoaderWeb(String url, Collection<Currency> currencies) {
+        Objects.requireNonNull(url);
+        Objects.requireNonNull(currencies);
+
         this.currency_URL = url;
         this.currencies = currencies;
     }
@@ -33,6 +44,7 @@ public class ExchangeRateLoaderWeb implements Loader<ExchangeRate> {
         }
     }
 
+    @Override
     public ExchangeRate loadOne(Currency source, Currency target) {
         try {
             return loadExchangeRate(source, target);
