@@ -3,7 +3,7 @@ package currencyExchange.controller;
 import currencyExchange.Model.Currency;
 import currencyExchange.Model.ExchangeRate;
 import currencyExchange.Model.Money;
-import currencyExchange.Model.persistence.web.ExchangeRateLoaderWeb;
+import currencyExchange.Model.persistence.ExchangeRateLoader;
 import currencyExchange.view.Dialog;
 import currencyExchange.view.Display;
 
@@ -14,24 +14,23 @@ public class MoneyCalculatorController implements ActionListener {
 
     private final Display display;
     private final Dialog dialog;
-    private final ExchangeRateLoaderWeb exchangeRateLoaderWeb; // TODO: Convert to
+    private final ExchangeRateLoader exchangeRateLoader;
 
-    public MoneyCalculatorController(Display display, Dialog dialog, ExchangeRateLoaderWeb exchangeRateLoaderWeb) {
+    public MoneyCalculatorController(Display display, Dialog dialog, ExchangeRateLoader exchangeRateLoader) {
         this.display = display;
         this.dialog = dialog;
-        this.exchangeRateLoaderWeb = exchangeRateLoaderWeb;
+        this.exchangeRateLoader = exchangeRateLoader;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO: When button gets activated, load money and currency from dialog, load exchange rate,
-        //  transform to objective currency and finally that Money send it to display
-
         Money fromMoney = dialog.getMoney();
         Currency toCurrency = dialog.getCurrencyTo();
 
-        ExchangeRate exchangeRate = exchangeRateLoaderWeb.loadOne(fromMoney.getCurrency(), toCurrency);
+        ExchangeRate exchangeRate = exchangeRateLoader.loadOne(fromMoney.getCurrency(), toCurrency);
 
+        Money result = exchangeRate.convertMoney(fromMoney);
 
+        display.refreshMoney(result);
     }
 }

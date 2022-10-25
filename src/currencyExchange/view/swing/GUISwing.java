@@ -18,6 +18,8 @@ public class GUISwing extends JFrame {
 
         getContentPane().add(jPanel);
 
+        setSize(600, 300);
+
         this.addWindowListener(new WindowCloseManager());
         setVisible(true);
     }
