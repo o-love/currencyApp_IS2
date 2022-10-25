@@ -1,16 +1,13 @@
-package currencyExchange.Util;
+package currencyExchange.Model;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.ExchangeRate;
-import currencyExchange.Model.Money;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CurrencyConversionUtilTest {
+class ExchangeRateTest {
 
     @Test
-    void testCorrectValue() {
+    void testConvertCorrectValueExchange() {
         Currency currency1 = new Currency("USD", "dollar", "$");
         Currency currency2 = new Currency("EUR", "euro", "€");
 
@@ -18,13 +15,13 @@ class CurrencyConversionUtilTest {
 
         Money money1 = new Money(10.f, currency1);
 
-        Money result = CurrencyConversionUtil.convertMoneyWithExchangeRate(money1, exchangeRate);
+        Money result = exchangeRate.convertMoney(money1);
 
         assertEquals(result.getAmount(), 20.f);
     }
 
     @Test
-    void testCorrectCurrency() {
+    void testConvertCorrectCurrency() {
         Currency currency1 = new Currency("USD", "dollar", "$");
         Currency currency2 = new Currency("EUR", "euro", "€");
 
@@ -32,7 +29,7 @@ class CurrencyConversionUtilTest {
 
         Money money1 = new Money(10.f, currency1);
 
-        Money result = CurrencyConversionUtil.convertMoneyWithExchangeRate(money1, exchangeRate);
+        Money result = exchangeRate.convertMoney(money1);
 
         assertEquals(result.getCurrency(), currency2);
     }

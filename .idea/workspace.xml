@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Currency conversion">
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/Display.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/DialogSwing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/DisplaySwing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/GUISwing.java" afterDir="false" />
+    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Main setup with redundant GUI">
+      <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/CombinedViewSwing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/java/currencyExchange/Model/ExchangeRateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/ExchangeRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/ExchangeRate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/UI/CurrencyExchangeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/view/CurrencyExchangeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Util/CurrencyConversionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Util/CurrencyConversionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/java/currencyExchange/Util/CurrencyConversionUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/java/currencyExchange/Util/CurrencyConversionUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Util/CurrencyConversionUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/view/swing/DialogSwing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/DialogSwing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/view/swing/GUISwing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/GUISwing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/java/currencyExchange/Util/CurrencyConversionUtilTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -50,7 +47,6 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
@@ -75,11 +71,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="currencyExchange.Model" />
       <recent name="currencyExchange.Util" />
       <recent name="currencyExchange.Model.persistence.files" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ExchangeRateTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="currencyExchange.Main" />
       <module name="currency exchange" />
@@ -139,8 +136,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ExchangeRateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="currencyExchange.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="currencyExchange.Model" />
+      <option name="MAIN_CLASS_NAME" value="currencyExchange.Model.ExchangeRateTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExchangeRateTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CurrencyConversionUtilTest" />
         <item itemvalue="JUnit.CurrencyLoaderFromFileTest.loadTest" />
@@ -163,7 +176,11 @@
       <workItem from="1665415294141" duration="2634000" />
       <workItem from="1665424728934" duration="181000" />
       <workItem from="1665768419284" duration="1500000" />
-      <workItem from="1665995708807" duration="6972000" />
+      <workItem from="1665995708807" duration="9711000" />
+      <workItem from="1666277722837" duration="334000" />
+      <workItem from="1666536742356" duration="5319000" />
+      <workItem from="1666603702107" duration="994000" />
+      <workItem from="1666611612164" duration="2114000" />
     </task>
     <task id="LOCAL-00001" summary="Teachers work">
       <created>1663593276242</created>
@@ -221,7 +238,35 @@
       <option name="project" value="LOCAL" />
       <updated>1665768934968</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Class of 17th of October">
+      <created>1666012361907</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666012361907</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Exchange Rate Loader for loading one exchange rate.">
+      <created>1666538020907</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666538020907</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Non-null addition to Currency">
+      <created>1666538700232</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666538700232</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Main setup with redundant GUI">
+      <created>1666538796821</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666538796821</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +292,12 @@
     <MESSAGE value="Delete uml files" />
     <MESSAGE value="CurrencyConversionUtil" />
     <MESSAGE value="Currency conversion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Currency conversion" />
+    <MESSAGE value="Class of 17th of October" />
+    <MESSAGE value="Exchange Rate Loader for loading one exchange rate." />
+    <MESSAGE value="Non-null addition tu Currency and Money" />
+    <MESSAGE value="Non-null addition to Currency" />
+    <MESSAGE value="Main setup with redundant GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main setup with redundant GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

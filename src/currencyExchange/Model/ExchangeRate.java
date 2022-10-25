@@ -20,4 +20,19 @@ public record ExchangeRate(Currency from, Currency to, float rate) {
             throw new IllegalArgumentException("Rate is 0.0 for ExchangeRate");
         }
     }
+
+    /**
+     * Creates a new {@code Money} that has the same value as
+     * @param from The monitary value to be converted to the new currency.
+     * @return A new {@code Money} with {@code Currency} being {@code ExchangeRate.to()} and with its value being the equivalent
+     * of {@code from}'s value in the new {@code Currency}.
+     *
+     * @throws IllegalArgumentException If {@code ExchangeRate.from() != Money.getCurrency()}
+     */
+    public Money convertMoney(Money from) {
+        if (!from.getCurrency().equals(this.from())) {
+            throw new IllegalArgumentException("Converting a Money in a currency with different ExchangeRate currency");
+        }
+        return new Money(this.rate() * from.getAmount(), this.to());
+    }
 }
