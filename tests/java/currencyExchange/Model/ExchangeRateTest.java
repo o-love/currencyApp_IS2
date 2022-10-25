@@ -17,7 +17,7 @@ class ExchangeRateTest {
 
         Money result = exchangeRate.convertMoney(money1);
 
-        assertEquals(result.getAmount(), 20.f);
+        assertEquals(result.amount(), 20.f);
     }
 
     @Test
@@ -31,6 +31,6 @@ class ExchangeRateTest {
 
         Money result = exchangeRate.convertMoney(money1);
 
-        assertEquals(result.getCurrency(), currency2);
+        assertEquals(result.currency(), currency2);
     }
 }

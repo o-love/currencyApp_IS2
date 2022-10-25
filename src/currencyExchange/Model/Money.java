@@ -1,23 +1,13 @@
 package currencyExchange.Model;
 
-public class Money {
-    private Currency currency;
-    private float amount;
+import java.util.Objects;
 
-    public Money(float amount, Currency currency) {
-        this.currency = currency;
-        this.amount = amount;
-    }
+public record Money(float amount, Currency currency) {
 
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setAmount(float amount){
-        this.amount = amount;
-    }
-
-    public float getAmount() {
-        return amount;
+    /**
+     * @throws NullPointerException if {@code currency} is {@code null}.
+     */
+    public Money {
+        Objects.requireNonNull(currency);
     }
 }

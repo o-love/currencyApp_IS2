@@ -30,9 +30,9 @@ public record ExchangeRate(Currency from, Currency to, float rate) {
      * @throws IllegalArgumentException If {@code ExchangeRate.from() != Money.getCurrency()}
      */
     public Money convertMoney(Money from) {
-        if (!from.getCurrency().equals(this.from())) {
+        if (!from.currency().equals(this.from())) {
             throw new IllegalArgumentException("Converting a Money in a currency with different ExchangeRate currency");
         }
-        return new Money(this.rate() * from.getAmount(), this.to());
+        return new Money(this.rate() * from.amount(), this.to());
     }
 }

@@ -27,7 +27,7 @@ public class MoneyCalculatorController implements ActionListener {
         Money fromMoney = dialog.getMoney();
         Currency toCurrency = dialog.getCurrencyTo();
 
-        ExchangeRate exchangeRate = exchangeRateLoader.loadOne(fromMoney.getCurrency(), toCurrency);
+        ExchangeRate exchangeRate = exchangeRateLoader.loadOne(fromMoney.currency(), toCurrency);
 
         Money result = exchangeRate.convertMoney(fromMoney);
 
