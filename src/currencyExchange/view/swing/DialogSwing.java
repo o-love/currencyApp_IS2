@@ -4,7 +4,6 @@ import currencyExchange.Model.Currency;
 import currencyExchange.Model.Money;
 import currencyExchange.controller.MoneyCalculatorController;
 import currencyExchange.view.Dialog;
-import currencyExchange.view.Display;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,20 +35,17 @@ public class DialogSwing extends JPanel implements Dialog {
     //
 
     private final Collection<Currency> currencyList;
-    private Display display;
 
     //
 
-    private JLabel moneyValueLabel, currencyFromLabel, currencyToLabel;
     private JTextField moneyValueTextField;
     private JComboBox<CurrencyCBIWrapper> currencyFromComboBox;
     private JComboBox<CurrencyCBIWrapper> currencyToComboBox;
     private JButton calculateButton;
 
 
-    public DialogSwing(Collection<Currency> currencyList, Display display) {
+    public DialogSwing(Collection<Currency> currencyList) {
         this.currencyList = currencyList;
-        this.display = display;
 
         setupGUI();
     }
@@ -61,9 +57,9 @@ public class DialogSwing extends JPanel implements Dialog {
     private void setupGUI() {
 
         // JLabel setup
-        moneyValueLabel = new JLabel(MONEY_VALUE_LABEL);
-        currencyFromLabel = new JLabel(CURRENCY_FROM_LABEL);
-        currencyToLabel = new JLabel(CURRENCY_TO_LABEL);
+        JLabel moneyValueLabel = new JLabel(MONEY_VALUE_LABEL);
+        JLabel currencyFromLabel = new JLabel(CURRENCY_FROM_LABEL);
+        JLabel currencyToLabel = new JLabel(CURRENCY_TO_LABEL);
 
         // Money value
         moneyValueTextField = new JFormattedTextField(NumberFormat.getInstance());
@@ -109,11 +105,12 @@ public class DialogSwing extends JPanel implements Dialog {
 
     @Override
     public Money getMoney() {
-        return null;
+        float value = Float.parseFloat(moneyValueTextField.getText());
+        return new Money(value, ((CurrencyCBIWrapper) currencyFromComboBox.getSelectedItem()).currency);
     }
 
     @Override
     public Currency getCurrencyTo() {
-        return null;
+        return ((CurrencyCBIWrapper) currencyToComboBox.getSelectedItem()).currency;
     }
 }
