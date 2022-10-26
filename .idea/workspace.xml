@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="UI form setup">
+    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Money Conversion in UI">
       <change afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/CombinedViewSwing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/ExchangeRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/ExchangeRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/view/swing/DisplaySwing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/DisplaySwing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/java/currencyExchange/Model/ExchangeRateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/java/currencyExchange/Model/ExchangeRateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/view/swing/DialogSwing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/view/swing/DialogSwing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <recent name="currencyExchange.Model.persistence.files" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExchangeRateTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="currencyExchange.Main" />
       <module name="currency exchange" />
@@ -150,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ExchangeRateTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ExchangeRateTest" />
         <item itemvalue="JUnit.CurrencyConversionUtilTest" />
         <item itemvalue="JUnit.CurrencyLoaderFromFileTest.loadTest" />
         <item itemvalue="JUnit.CurrencyLoaderFromFileTest" />
@@ -177,7 +176,9 @@
       <workItem from="1666277722837" duration="334000" />
       <workItem from="1666536742356" duration="5319000" />
       <workItem from="1666603702107" duration="994000" />
-      <workItem from="1666611612164" duration="2630000" />
+      <workItem from="1666611612164" duration="2738000" />
+      <workItem from="1666694745193" duration="839000" />
+      <workItem from="1666775499289" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="Teachers work">
       <created>1663593276242</created>
@@ -277,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666686910434</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Convert Money to record">
+      <created>1666686973818</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1666686973818</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +318,9 @@
     <MESSAGE value="Main setup with redundant GUI" />
     <MESSAGE value="Move exchange rate conversion into ExchangeRate instead of CurrencyConversionUtil" />
     <MESSAGE value="UI form setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI form setup" />
+    <MESSAGE value="Convert Money to record" />
+    <MESSAGE value="Money Conversion in UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Money Conversion in UI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

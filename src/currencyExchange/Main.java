@@ -32,7 +32,7 @@ public class Main {
             // GUI
             DisplaySwing display = new DisplaySwing(money);
 
-            DialogSwing dialog = new DialogSwing(currencies, display);
+            DialogSwing dialog = new DialogSwing(currencies);
 
             // Controller
             MoneyCalculatorController moneyCalculatorController = new MoneyCalculatorController(display, dialog, exchangeRateLoader);

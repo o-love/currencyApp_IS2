@@ -96,7 +96,6 @@ public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
         ourSplit = ourSplit.substring(ourSplit.indexOf(":") + 1);
         ourSplit = ourSplit.substring(0, ourSplit.indexOf("}")).stripTrailing().stripLeading();
 
-        System.out.println(ourSplit);
         return Float.parseFloat(ourSplit);
     }
 }
