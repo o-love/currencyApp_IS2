@@ -38,9 +38,6 @@ public class Main {
             MoneyCalculatorController moneyCalculatorController = new MoneyCalculatorController(display, dialog, exchangeRateLoader);
             dialog.setController(moneyCalculatorController);
 
-            new GUISwing(display, "Display");
-            new GUISwing(dialog, "Dialog");
-
             // Combined view
             new GUISwing(new CombinedViewSwing(dialog, display), "Combined");
         });

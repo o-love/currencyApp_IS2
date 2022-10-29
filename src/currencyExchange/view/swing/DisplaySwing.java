@@ -11,7 +11,6 @@ public class DisplaySwing extends JPanel implements Display {
     private JTextArea display;
 
     public DisplaySwing(Money money) {
-        super();
         createComponentsGUI();
         refreshMoney(money);
     }
