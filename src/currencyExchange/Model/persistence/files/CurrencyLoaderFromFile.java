@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class CurrencyLoaderFromFile implements Loader<Currency> {
 
@@ -31,14 +30,14 @@ public class CurrencyLoaderFromFile implements Loader<Currency> {
     }
 
     private List<Currency> loadAllCurrenciesFromFile() throws IOException {
-        List<String> fileLines = loadLinesFromFile();
-
-        return fileLines.stream().map(this::createCurrencyFromLine).toList();
+        return loadLinesFromFile()
+                .stream().map(this::createCurrencyFromLine)
+                .toList();
     }
 
     private List<String> loadLinesFromFile() throws IOException {
-        Stream<String> lines = Files.lines(Paths.get(fileName));
-        return lines.collect(Collectors.toList());
+        return Files.lines(Paths.get(fileName))
+            .collect(Collectors.toList());
     }
 
     private Currency createCurrencyFromLine(String line) {
