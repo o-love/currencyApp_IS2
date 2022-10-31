@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Small refactors.">
+    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Code clean up">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +171,7 @@
       <workItem from="1666775499289" duration="2114000" />
       <workItem from="1667037325574" duration="53000" />
       <workItem from="1667075091765" duration="291000" />
+      <workItem from="1667235714339" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="Teachers work">
       <created>1663593276242</created>
@@ -289,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666776366439</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Code clean up">
+      <created>1667235496837</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667235496837</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +335,8 @@
     <MESSAGE value="Convert Money to record" />
     <MESSAGE value="Money Conversion in UI" />
     <MESSAGE value="Small refactors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small refactors." />
+    <MESSAGE value="Code clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code clean up" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

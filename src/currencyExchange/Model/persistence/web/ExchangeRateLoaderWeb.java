@@ -39,8 +39,7 @@ public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
             return loadAll();
         }
         catch (IOException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException("Unable to load from "+currency_URL, e);
         }
     }
 
@@ -49,8 +48,7 @@ public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
         try {
             return loadExchangeRate(source, target);
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException("Unable to load from "+currency_URL, e);
         }
     }
 
