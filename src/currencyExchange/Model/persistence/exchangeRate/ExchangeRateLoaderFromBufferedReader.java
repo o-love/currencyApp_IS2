@@ -1,35 +1,25 @@
-package currencyExchange.Model.persistence.web;
+package currencyExchange.Model.persistence.exchangeRate;
 
 import currencyExchange.Model.Currency;
 import currencyExchange.Model.ExchangeRate;
-import currencyExchange.Model.persistence.ExchangeRateLoader;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
+class ExchangeRateLoaderFromBufferedReader implements ExchangeRateLoader {
 
-    private final String currency_URL;
+    private final ExchangeRateLoaderBufferReaderFactory bufferReaderFactory;
     private final Collection<Currency> currencies;
 
-    /**
-     *
-     * @param url String which specifies the URL from which to load the exchange rates.
-     * @param currencies Collection with the currencies to load the {@code ExchangeRate} for.
-     *
-     * @throws NullPointerException if {@code url} or {@code currencies} is {@code null}.
-     */
-    public ExchangeRateLoaderWeb(String url, Collection<Currency> currencies) {
-        Objects.requireNonNull(url);
+    protected ExchangeRateLoaderFromBufferedReader(ExchangeRateLoaderBufferReaderFactory bufferReaderFactory, Collection<Currency> currencies) {
+        Objects.requireNonNull(bufferReaderFactory);
         Objects.requireNonNull(currencies);
 
-        this.currency_URL = url;
+        this.bufferReaderFactory = bufferReaderFactory;
         this.currencies = currencies;
     }
 
@@ -39,7 +29,7 @@ public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
             return loadAll();
         }
         catch (IOException e) {
-            throw new RuntimeException("Unable to load from "+currency_URL, e);
+            throw new RuntimeException(e);
         }
     }
 
@@ -48,7 +38,7 @@ public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
         try {
             return loadExchangeRate(source, target);
         } catch (IOException e) {
-            throw new RuntimeException("Unable to load from "+currency_URL, e);
+            throw new RuntimeException(e);
         }
     }
 
@@ -68,24 +58,17 @@ public class ExchangeRateLoaderWeb implements ExchangeRateLoader {
     }
 
     private ExchangeRate loadExchangeRate(Currency source, Currency target) throws IOException {
-        URL url = urlBuilder(source, target);
-
-        String json = getJSONfromURL(url);
+        String json = getJSONfromBufferedReader(bufferReaderFactory.getExchangeRateReader(source, target));
 
         float rate = jsonParser(json);
 
         return new ExchangeRate(source, target, rate);
     }
 
-    private URL urlBuilder(Currency source, Currency target) throws MalformedURLException {
-        String urlString =  String.format("%s/%s/%s.json", this.currency_URL, source.code(), target.code());
-        return new URL(urlString);
-    }
 
-    private String getJSONfromURL(URL url) throws IOException {
-        InputStream inputStream = url.openStream();
-        byte[] buffer = new byte[1024];
-        int length = inputStream.read(buffer);
+    private String getJSONfromBufferedReader(BufferedReader bufferedReader) throws IOException {
+        char[] buffer = new char[1024];
+        int length = bufferedReader.read(buffer);
         return new String(buffer, 0, length);
     }
 

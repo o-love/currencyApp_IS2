@@ -3,7 +3,7 @@ package currencyExchange.controller;
 import currencyExchange.Model.Currency;
 import currencyExchange.Model.ExchangeRate;
 import currencyExchange.Model.Money;
-import currencyExchange.Model.persistence.ExchangeRateLoader;
+import currencyExchange.Model.persistence.exchangeRate.ExchangeRateLoader;
 import currencyExchange.view.Dialog;
 import currencyExchange.view.Display;
 

@@ -2,15 +2,20 @@ package currencyExchange.Model.persistence.files;
 
 
 import currencyExchange.Model.Currency;
+import currencyExchange.Model.persistence.currency.CurrencyLoader;
 import org.junit.jupiter.api.Test;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CurrencyLoaderFromFileTest {
+class CurrencyLoaderFromBufferedReaderTest {
 
     @Test
     void loadTest() {
@@ -21,9 +26,13 @@ class CurrencyLoaderFromFileTest {
         assertEquals(currencyList.remove(0), new Currency("EUR", "Euro", "€"));
     }
 
-    private List<Currency> loadCurrencies() {
+    private Collection<Currency> loadCurrencies() {
         String path = Paths.get("tests", "resources", "currency.csv").toString();
-        return new CurrencyLoaderFromFile(path).load();
+        try {
+            return CurrencyLoader.of(new BufferedReader(new FileReader(path))).load();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
