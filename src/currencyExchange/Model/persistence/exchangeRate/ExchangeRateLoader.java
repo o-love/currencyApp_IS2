@@ -9,7 +9,7 @@ import java.util.Collection;
 public interface ExchangeRateLoader extends Loader<ExchangeRate> {
     ExchangeRate loadOne(Currency source, Currency target);
 
-    static ExchangeRateLoader build(ExchangeRateLoaderBufferReaderFactory bufferReaderFactory, Collection<Currency> currencies) {
+    static ExchangeRateLoader createJSON(ExchangeRateLoaderBufferReaderFactory bufferReaderFactory, Collection<Currency> currencies) {
         return new ExchangeRateLoaderFromBufferedReader(bufferReaderFactory, currencies);
     }
 }

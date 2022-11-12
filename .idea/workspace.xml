@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Fix IOException handling">
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/currency/CurrencyLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoaderBufferReaderFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoaderBufferReaderFactoryFromURL.java" afterDir="false" />
+    <list default="true" id="6f6bd101-48d7-4cc2-88f8-2cc4ebebab56" name="Changes" comment="Applied Dependency Inversion to IO operations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/currencyExchange/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/ExchangeRateLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/files/CurrencyLoaderFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/currency/CurrencyLoaderFromBufferedReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/web/ExchangeRateLoaderWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoaderFromBufferedReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/controller/MoneyCalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/java/currencyExchange/Model/persistence/files/CurrencyLoaderFromFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/java/currencyExchange/Model/persistence/files/CurrencyLoaderFromBufferedReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/currency/CurrencyLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/currency/CurrencyLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoaderBufferReaderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currencyExchange/Model/persistence/exchangeRate/ExchangeRateLoaderBufferReaderFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/java/currencyExchange/Model/persistence/files/CurrencyLoaderFromBufferedReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/java/currencyExchange/Model/persistence/files/CurrencyLoaderFromBufferedReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +182,8 @@
       <workItem from="1667567267362" duration="24000" />
       <workItem from="1667911455110" duration="606000" />
       <workItem from="1668001194389" duration="1006000" />
-      <workItem from="1668173200928" duration="2870000" />
+      <workItem from="1668173200928" duration="3020000" />
+      <workItem from="1668235228422" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="Teachers work">
       <created>1663593276242</created>
@@ -321,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667236609908</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Applied Dependency Inversion to IO operations.">
+      <created>1668176162580</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668176162580</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +366,8 @@
     <MESSAGE value="Small refactors." />
     <MESSAGE value="Code clean up" />
     <MESSAGE value="Fix IOException handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix IOException handling" />
+    <MESSAGE value="Applied Dependency Inversion to IO operations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Applied Dependency Inversion to IO operations." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

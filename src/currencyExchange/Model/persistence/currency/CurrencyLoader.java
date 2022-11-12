@@ -11,7 +11,7 @@ public interface CurrencyLoader extends Loader<Currency> {
     /**
      * @throws NullPointerException if {@code bufferedReader} is {@code null}.
      */
-    static CurrencyLoader of(BufferedReader bufferedReader) {
+    static CurrencyLoader create(BufferedReader bufferedReader) {
         Objects.requireNonNull(bufferedReader);
 
         return new CurrencyLoaderFromBufferedReader(bufferedReader);

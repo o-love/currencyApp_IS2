@@ -14,6 +14,7 @@ import currencyExchange.view.swing.GUISwing;
 
 import javax.swing.*;
 import java.io.*;
+import java.net.URL;
 import java.util.Collection;
 
 public class Main {
@@ -26,10 +27,10 @@ public class Main {
         Collection<Currency> currencies = loadCurrencies();
         ExchangeRateLoader exchangeRateLoader = loadExchangeRateLoader(currencies);
 
-        SwingUtilities.invokeLater(() -> {
-            // Model for GUI
-            Money money = new Money(23.f, currencies.iterator().next());
+        // Model for GUI
+        Money money = new Money(23.f, currencies.iterator().next());
 
+        SwingUtilities.invokeLater(() -> {
             // GUI
             DisplaySwing display = new DisplaySwing(money);
 
@@ -47,16 +48,20 @@ public class Main {
 
     private static Collection<Currency> loadCurrencies() {
         try {
-            return CurrencyLoader.of(new BufferedReader(new FileReader("currency.csv"))).load();
+            return CurrencyLoader.create(new BufferedReader(new FileReader("currency.csv"))).load();
         } catch (IOException ioException) {
             throw new RuntimeException(ioException);
         }
     }
 
     private static ExchangeRateLoader loadExchangeRateLoader(Collection<Currency> currencies) {
-        return ExchangeRateLoader.build(
-                ExchangeRateLoaderBufferReaderFactory.of(URL_FOR_CURRENCY_EXCHANGE_RATES),
-                currencies
-        );
+        try {
+            return ExchangeRateLoader.createJSON(
+                    ExchangeRateLoaderBufferReaderFactory.create(new URL(URL_FOR_CURRENCY_EXCHANGE_RATES)),
+                    currencies
+            );
+        } catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
     }
 }

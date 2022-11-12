@@ -29,7 +29,7 @@ class CurrencyLoaderFromBufferedReaderTest {
     private Collection<Currency> loadCurrencies() {
         String path = Paths.get("tests", "resources", "currency.csv").toString();
         try {
-            return CurrencyLoader.of(new BufferedReader(new FileReader(path))).load();
+            return CurrencyLoader.create(new BufferedReader(new FileReader(path))).load();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
