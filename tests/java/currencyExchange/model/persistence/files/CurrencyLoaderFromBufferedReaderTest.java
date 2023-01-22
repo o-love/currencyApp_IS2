@@ -1,8 +1,8 @@
-package currencyExchange.Model.persistence.files;
+package currencyExchange.model.persistence.files;
 
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.persistence.currency.CurrencyLoader;
+import currencyExchange.model.Currency;
+import currencyExchange.view.persistence.currency.CurrencyLoader;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;

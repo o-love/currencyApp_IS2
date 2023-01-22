@@ -1,4 +1,4 @@
-package currencyExchange.Model;
+package currencyExchange.model;
 
 import java.util.Objects;
 

@@ -1,7 +1,7 @@
 package currencyExchange.view.swing;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.Money;
+import currencyExchange.model.Currency;
+import currencyExchange.model.Money;
 import currencyExchange.controller.MoneyCalculatorController;
 import currencyExchange.view.Dialog;
 

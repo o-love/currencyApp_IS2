@@ -1,4 +1,4 @@
-package currencyExchange.Model.persistence;
+package currencyExchange.view.persistence;
 
 import java.util.Collection;
 

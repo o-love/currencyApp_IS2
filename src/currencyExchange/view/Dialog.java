@@ -1,7 +1,7 @@
 package currencyExchange.view;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.Money;
+import currencyExchange.model.Currency;
+import currencyExchange.model.Money;
 
 public interface Dialog {
     Money getMoney();

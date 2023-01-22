@@ -1,4 +1,4 @@
-package currencyExchange.Model;
+package currencyExchange.model;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,8 +1,8 @@
-package currencyExchange.Model.persistence.exchangeRate;
+package currencyExchange.view.persistence.exchangeRate;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.ExchangeRate;
-import currencyExchange.Model.persistence.Loader;
+import currencyExchange.model.Currency;
+import currencyExchange.model.ExchangeRate;
+import currencyExchange.view.persistence.Loader;
 
 import java.util.Collection;
 

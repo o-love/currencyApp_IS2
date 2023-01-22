@@ -1,9 +1,9 @@
 package currencyExchange.controller;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.ExchangeRate;
-import currencyExchange.Model.Money;
-import currencyExchange.Model.persistence.exchangeRate.ExchangeRateLoader;
+import currencyExchange.model.Currency;
+import currencyExchange.model.ExchangeRate;
+import currencyExchange.model.Money;
+import currencyExchange.view.persistence.exchangeRate.ExchangeRateLoader;
 import currencyExchange.view.Dialog;
 import currencyExchange.view.Display;
 

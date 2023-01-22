@@ -1,11 +1,11 @@
 package currencyExchange;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.Money;
-import currencyExchange.Model.persistence.currency.CurrencyLoader;
-import currencyExchange.Model.persistence.exchangeRate.ExchangeRateLoader;
+import currencyExchange.model.Currency;
+import currencyExchange.model.Money;
+import currencyExchange.view.persistence.currency.CurrencyLoader;
+import currencyExchange.view.persistence.exchangeRate.ExchangeRateLoader;
 
-import currencyExchange.Model.persistence.exchangeRate.ExchangeRateLoaderBufferReaderFactory;
+import currencyExchange.view.persistence.exchangeRate.ExchangeRateLoaderBufferReaderFactory;
 import currencyExchange.controller.MoneyCalculatorController;
 import currencyExchange.view.swing.CombinedViewSwing;
 import currencyExchange.view.swing.DialogSwing;

@@ -1,6 +1,6 @@
-package currencyExchange.Model.persistence.exchangeRate;
+package currencyExchange.view.persistence.exchangeRate;
 
-import currencyExchange.Model.Currency;
+import currencyExchange.model.Currency;
 
 import java.io.BufferedReader;
 import java.io.IOException;

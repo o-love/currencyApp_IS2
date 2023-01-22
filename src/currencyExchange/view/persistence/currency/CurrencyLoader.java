@@ -1,7 +1,7 @@
-package currencyExchange.Model.persistence.currency;
+package currencyExchange.view.persistence.currency;
 
-import currencyExchange.Model.Currency;
-import currencyExchange.Model.persistence.Loader;
+import currencyExchange.model.Currency;
+import currencyExchange.view.persistence.Loader;
 
 import java.io.BufferedReader;
 import java.util.Objects;

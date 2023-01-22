@@ -1,6 +1,6 @@
 package currencyExchange.view.swing;
 
-import currencyExchange.Model.Money;
+import currencyExchange.model.Money;
 import currencyExchange.view.Display;
 
 import javax.swing.*;
